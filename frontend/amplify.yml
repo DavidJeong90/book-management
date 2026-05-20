@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands: [ "cd frontend", "npm ci" ]
+    build:
+      commands: [ "npm run build" ]
+  artifacts:
+    baseDirectory: frontend/.next
+    files: [ '**/*' ]
+  cache:
+    paths: [ frontend/node_modules/**/* ]
+
+# Amplify 콘솔 환경 변수
+# NEXT_PUBLIC_API_URL = http://[EB 환경 URL]
+# EB CORS_ORIGINS = https://main.[앱ID].amplifyapp.com

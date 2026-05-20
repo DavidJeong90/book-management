@@ -38,9 +38,9 @@ class BookServiceTest {
         bookService.create(dto1);
 
         BookRequestDto dto2 = new BookRequestDto();
-        dto1.setTitle("도서2");
-        dto1.setContent("도서2 내용");
-        dto1.setAuthor("작성자2");
+        dto2.setTitle("도서2");
+        dto2.setContent("도서2 내용");
+        dto2.setAuthor("작성자2");
         bookService.create(dto2);
     }
 

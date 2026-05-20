@@ -31,7 +31,7 @@ public class BookResponseDto {
         dto.content     = book.getContent();
         dto.author      = book.getAuthor();
         dto.price       = book.getPrice();
-        dto.getAvailabe = book.getAvailable();
+        dto.available   = book.getAvailable();
         dto.serverIp    = book.getServerIp();
         dto.createdAt   = book.getCreatedAt();
         dto.updatedAt   = book.getUpdatedAt();

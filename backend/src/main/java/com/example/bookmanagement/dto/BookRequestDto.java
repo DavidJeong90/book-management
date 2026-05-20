@@ -24,4 +24,8 @@ public class BookRequestDto {
     @NotBlank(message = "작성자는 필수입니다.")
     @Size(max = 100, message = "작성자는 100자 이내여야 합니다.")
     private String author;
+
+    private Integer price;
+
+    private boolean available;
 }

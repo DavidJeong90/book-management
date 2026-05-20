@@ -56,7 +56,7 @@ public class BookService {
                 dto.getContent(),
                 dto.getAuthor(),
                 dto.getPrice(),
-                dto.getAvailable(),
+                dto.isAvailable(),
                 getServerIp()  // 생성 서버 IP 자동 주입
         );
         return BookResponseDto.from(bookRepository.save(book));
@@ -72,7 +72,7 @@ public class BookService {
         book.setContent(dto.getContent());
         book.setAuthor(dto.getAuthor());
         book.setPrice(dto.getPrice());
-        book.setAvailabe(dto.getAvailable());
+        book.setAvailable(dto.isAvailable());
         book.setServerIp(getServerIp());  // 수정 서버 IP 갱신
         // @Transactional + dirty checking → 자동 UPDATE
         return BookResponseDto.from(book);

@@ -6,7 +6,7 @@
 |------|-------------|------|
 | Spring Boot | **3.5.14**  | 3.5.14는 버전만 교체 가능 (build.gradle 1줄) |
 | Next.js | **15.5.15** | Next.js 6 (2018년)은 App Router·TypeScript 미지원. 현재 stable 최신 사용 |
-| Java | **17**      | Spring Boot 3.x 필수 요구사항 |
+| Java | **21**      | Spring Boot 3.x 필수 요구사항 |
 
 ### Spring Boot 버전 변경 방법
 ```groovy
@@ -20,7 +20,7 @@ id 'org.springframework.boot' version '3.5.14'  // 버전만 교체
 
 ```
 book-management/
-├── backend/                    ← Spring Boot 3.3.5 (Java 17)
+├── backend/                    ← Spring Boot 3.3.5 (Java 21)
 │   ├── build.gradle
 │   ├── settings.gradle
 │   └── src/

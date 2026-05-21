@@ -111,15 +111,15 @@ npm run dev
 
 ### Backend Elastic Beanstalk `/opt/app/.env`
 ```
-DB_HOST=database-book-manage.cbmw4oyu26nx.ap-northeast-2.rds.amazonaws.com
+DB_HOST=jdbc:mysql://database-book-manage.cbmw4oyu26nx.ap-northeast-2.rds.amazonaws.com:3306
 DB_PORT=3306
 DB_USER=admin
 DB_PASS=admin1234
 SERVER_PORT=8080
-CORS_ORIGINS=https://amplifyapp.com
+CORS_ORIGINS=https://master.dkxy5b2bqoka7.amplifyapp.com/
 ```
 
 ### Frontend AWS Amplify `.env.production`
 ```
-NEXT_PUBLIC_API_URL=https://master.dkxy5b2bqoka7.amplifyapp.com/
+NEXT_PUBLIC_API_URL=https://book-management-env.eba-xnbx8rbi.ap-northeast-2.elasticbeanstalk.com
 ```

@@ -21,8 +21,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOrigins(origins) // 분리된 배열을 안전하게 주입
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .maxAge(3600)
-                .allowCredentials(!corsOrigins.equals("*"));
+                .maxAge(3600);
 //        registry.addMapping("/api/**")
 //                .allowedOrigins(allowedOrigins.split(","))
 //                .allowedMethods("GET","POST","PUT","DELETE","PATCH","OPTIONS")

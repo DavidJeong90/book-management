@@ -46,7 +46,7 @@ book-management/
 │   ├── tsconfig.json
 │   ├── tailwind.config.ts
 │   ├── .env.local              ← 로컬용 (localhost:8080)
-│   ├── .env.production         ← 운영용 ([BE-ALB-DNS])
+│   ├── .env.production         ← 운영용 (http://book-management-env.eba-xnbx8rbi.ap-northeast-2.elasticbeanstalk.com/)
 │   └── src/
 │       ├── app/
 │       │   ├── layout.tsx
@@ -78,7 +78,7 @@ cd backend
 ./gradlew test
 
 # 로컬 서버 실행 (MySQL 필요)
-export DB_HOST=localhost DB_USER=root DB_PASS=password
+export DB_HOST=localhost DB_USER=root DB_PASS=root1234
 ./gradlew bootRun
 # → http://localhost:8080
 ```
@@ -109,17 +109,17 @@ npm run dev
 
 ## ☁️ AWS 배포 환경변수
 
-### Backend EC2 `/opt/app/.env`
+### Backend Elastic Beanstalk `/opt/app/.env`
 ```
-DB_HOST=[RDS 엔드포인트]
+DB_HOST=database-book-manage.cbmw4oyu26nx.ap-northeast-2.rds.amazonaws.com
 DB_PORT=3306
 DB_USER=admin
-DB_PASS=[RDS 암호]
+DB_PASS=admin1234
 SERVER_PORT=8080
-CORS_ORIGINS=http://[FE-ALB-DNS]
+CORS_ORIGINS=https://amplifyapp.com
 ```
 
-### Frontend `.env.production`
+### Frontend AWS Amplify `.env.production`
 ```
-NEXT_PUBLIC_API_URL=http://[BE-ALB-DNS]
+NEXT_PUBLIC_API_URL=https://master.dkxy5b2bqoka7.amplifyapp.com/
 ```

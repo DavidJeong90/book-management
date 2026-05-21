@@ -47,6 +47,19 @@ export default function BookCard({ book, onEdit, onDelete }: Props) {
           {book.content}
         </p>
       )}
+        가격
+        <h2 className="text-base font-semibold text-gray-800 leading-snug">
+            {book.price}
+        </h2>
+
+
+      <span className={`text-[11px] px-2 py-0.5 rounded-full font-medium
+            ${book.available
+              ? 'bg-green-50 text-green-600 border border-green-200'
+              : 'bg-gray-100 text-gray-500 border border-gray-200'
+            }`}>
+            {book.available ? '대여 가능' : '대여 중'}
+      </span>
 
       {/* 메타 정보 */}
       <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400

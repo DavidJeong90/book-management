@@ -93,7 +93,7 @@ export default function BookForm({ initialData, onSubmit, onCancel }: Props) {
 
         <div>
           <label className="block text-xs font-medium text-gray-600 mb-1">
-            가격 <span className="text-red-400">*</span>
+            가격
           </label>
           <input
               type="number"
@@ -104,6 +104,36 @@ export default function BookForm({ initialData, onSubmit, onCancel }: Props) {
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm
                        focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
           />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-gray-600 mb-1">
+            대출여부
+          </label>
+          <div className="flex items-center gap-4 py-2">
+            <label className="flex items-center gap-2 text-sm cursor-pointer">
+              <input
+                  type="radio"
+                  name="available"
+                  value="true"
+                  checked={available}
+                  onChange={e => setAvailable(e.target.value === "true")}
+                  className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-300"
+              />
+              <span>가능 (True)</span>
+            </label>
+
+            <label className="flex items-center gap-2 text-sm cursor-pointer">
+              <input
+                  type="radio"
+                  name="available"
+                  value="false"
+                  checked={!available}
+                  onChange={e => setAvailable(e.target.value === "true")}
+                  className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-300"
+              />
+              <span>불가능 (False)</span>
+            </label>
+          </div>
         </div>
       </div>
 

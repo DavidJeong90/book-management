@@ -16,14 +16,18 @@ spring:
       connection-timeout: 30000
       idle-timeout: 300000
 
+      sql:
+        init:
+          mode: always
+
   jpa:
     hibernate:
-      ddl-auto: validate        # 운영: validate (스키마 자동 변경 금지)
-    show-sql: false
+      ddl-auto: update        # 운영: validate (스키마 자동 변경 금지)
+    show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
-        format_sql: false
+        format_sql: true
     open-in-view: false         # OSIV 비활성화 (성능)
 
 server:

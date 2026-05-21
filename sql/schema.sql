@@ -8,7 +8,6 @@ CREATE DATABASE IF NOT EXISTS book_management
   COLLATE utf8mb4_unicode_ci;
 
 USE book_management;
-
 CREATE TABLE IF NOT EXISTS books (
     id         BIGINT       AUTO_INCREMENT PRIMARY KEY,
     title      VARCHAR(200) NOT NULL,
@@ -26,6 +25,6 @@ INSERT INTO books (title, content, author, server_ip, price) VALUES
   ('도서1',    '도서1 내용', '작성자1', 'Init', 1000),
   ('도서2',    '도서2 내용', '작성자2', 'Init', 2000),
   ('도서3',    '도서3 내용', '작성자3', 'Init', 3000),
-  ('도서4',    '도서4 내용', '작성자4', 'Init', 4000),
+  ('도서4',    '도서4 내용', '작성자4', 'Init', 4000);
 
-SELECT id, title, author, price, available created_at FROM books;
+SELECT id, title, author, price, available, created_at FROM books;

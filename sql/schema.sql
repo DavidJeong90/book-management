@@ -21,10 +21,10 @@ CREATE TABLE IF NOT EXISTS books (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 초기 데이터
-INSERT INTO books (title, content, author, server_ip, price) VALUES
-  ('도서1',    '도서1 내용', '작성자1', 'Init', 1000),
-  ('도서2',    '도서2 내용', '작성자2', 'Init', 2000),
-  ('도서3',    '도서3 내용', '작성자3', 'Init', 3000),
-  ('도서4',    '도서4 내용', '작성자4', 'Init', 4000);
+INSERT INTO books (title, content, author, server_ip, price, available) VALUES
+  ('도서1',    '도서1 내용', '작성자1', 'Init', 1000, true),
+  ('도서2',    '도서2 내용', '작성자2', 'Init', 2000, true),
+  ('도서3',    '도서3 내용', '작성자3', 'Init', 3000, true),
+  ('도서4',    '도서4 내용', '작성자4', 'Init', 4000, true);
 
 SELECT id, title, author, price, available, created_at FROM books;

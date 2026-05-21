@@ -1,15 +1,22 @@
 version: 1
-frontend:
-  phases:
-    preBuild:
-      commands: [ "cd frontend", "npm ci" ]
-    build:
-      commands: [ "npm run build" ]
-  artifacts:
-    baseDirectory: frontend/.next
-    files: [ '**/*' ]
-  cache:
-    paths: [ frontend/node_modules/**/* ]
+applications:
+  - appRoot: frontend
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - export NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
 
 # Amplify 콘솔 환경 변수
 # NEXT_PUBLIC_API_URL = http://[EB 환경 URL]

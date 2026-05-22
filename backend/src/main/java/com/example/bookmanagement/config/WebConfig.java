@@ -7,26 +7,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-    @Value("${app.cors.allowed-origins:http://localhost:3000}")
-    private String allowedOrigins;
-    @Value("${CORS_ORIGINS:*}")
+    @Value("${CORS_ORIGINS:http://localhost:3000}")
     private String corsOrigins;
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        String[] origins = (corsOrigins == null || corsOrigins.trim().isEmpty())
-                ? new String[]{"*"}
-                : corsOrigins.split(",");
+        String[] origins = corsOrigins.split(",");
 
         registry.addMapping("/**")
-                .allowedOrigins(origins) // 분리된 배열을 안전하게 주입
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedOrigins(origins) // 정확한 프론트엔드 주소 배열 주입
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
                 .allowedHeaders("*")
+                .allowCredentials(true) // 인증 정보(쿠키/헤더) 허용
                 .maxAge(3600);
-//        registry.addMapping("/api/**")
-//                .allowedOrigins(allowedOrigins.split(","))
-//                .allowedMethods("GET","POST","PUT","DELETE","PATCH","OPTIONS")
-//                .allowedHeaders("*")
-//                .allowCredentials(true)
-//                .maxAge(3600);
     }
 }
